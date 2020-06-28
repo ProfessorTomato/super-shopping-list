@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Super Shopping List</title>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://www.w3schools.com/lib/w3-colors-2019.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.6.6/dragula.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="w3-container w3-2019-living-coral w3-center">
+      <h2>Super Shopping List</h2>
+    </div>
+
+    <div class="w3-container w3-margin w3-center">
+      <button
+        class="w3-button w3-circle w3-2019-living-coral w3-xlarge w3-animate-top"
+        onclick="document.getElementById('modal_add').style.display='block'"
+      >
+        &plus;
+      </button>
+    </div>
+
+    <!-- Ventana modal-->
+    <div id="modal_add" class="w3-modal">
+      <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+        <header class="w3-container w3-2019-sweet-corn">
+          <span
+            onclick="document.getElementById('modal_add').style.display='none'"
+            class="w3-button w3-display-topright w3-hover-red"
+            >&times;</span
+          >
+          <h2>Add</h2>
+        </header>
+        <div class="w3-container">
+          <input
+            id="input_nombre"
+            class="w3-input w3-margin-top w3-margin-bottom w3-border"
+            type="text"
+            placeholder="Item"
+          />
+          <input
+            id="input_text1"
+            class="w3-input w3-margin-bottom w3-border"
+            type="text"
+            placeholder="Text 1"
+          />
+          <input
+            id="input_text2"
+            class="w3-input w3-margin-bottom w3-border"
+            type="text"
+            placeholder="Text 2"
+          />
+        </div>
+        <footer class="w3-container w3-2019-sweet-corn w3-padding w3-center">
+          <button
+            class="w3-button w3-circle w3-2019-living-coral w3-xlarge"
+            onclick="nueva_tarjeta('contenedor-tarjetas', document.getElementById('input_nombre').value, 
+              document.getElementById('input_text1').value, document.getElementById('input_text2').value, 'w3-2019-living-coral');
+              document.getElementById('modal_add').style.display='none';"
+          >
+            &plus;
+          </button>
+          <button
+            class="w3-button w3-circle w3-2019-pepper-stem w3-xlarge"
+            onclick="nueva_tarjeta('contenedor-tarjetas', document.getElementById('input_nombre').value, 
+          document.getElementById('input_text1').value, document.getElementById('input_text2').value, 'w3-2019-pepper-stem');
+          document.getElementById('modal_add').style.display='none';"
+          >
+            &plus;
+          </button>
+          <button
+            class="w3-button w3-circle w3-2019-toffee w3-xlarge"
+            onclick="nueva_tarjeta('contenedor-tarjetas', document.getElementById('input_nombre').value, 
+          document.getElementById('input_text1').value, document.getElementById('input_text2').value, 'w3-2019-toffee');
+          document.getElementById('modal_add').style.display='none';"
+          >
+            &plus;
+          </button>
+          <button
+            class="w3-button w3-circle w3-2019-princess-blue w3-xlarge"
+            onclick="nueva_tarjeta('contenedor-tarjetas', document.getElementById('input_nombre').value, 
+          document.getElementById('input_text1').value, document.getElementById('input_text2').value, 'w3-2019-princess-blue');
+          document.getElementById('modal_add').style.display='none';"
+          >
+            &plus;
+          </button>
+        </footer>
+      </div>
+    </div>
+
+    <!-- Tarjetas -->
+    <div
+      id="contenedor-tarjetas"
+      class="w3-container w3-margin w3-animate-left"
+    >
+      <div id="huevos" class="w3-card-4 w3-margin-bottom">
+        <header class="w3-bar w3-2019-living-coral w3-padding">
+          <div class="w3-left">
+            <h3>Huevos</h3>
+          </div>
+          <div class="w3-right">
+            <button
+              class="w3-button w3-circle w3-white w3-xlarge w3-right w3-text-red"
+              onclick="borrar_tarjeta('huevos')"
+            >
+              &minus;
+            </button>
+          </div>
+        </header>
+
+        <div class="w3-container">
+          <p>2 docenas</p>
+        </div>
+
+        <footer class="w3-container w3-light-grey">
+          <p>Al lado del aceíte</p>
+        </footer>
+      </div>
+
+      <div id="cebollas" class="w3-card-4 w3-margin-bottom">
+        <header class="w3-bar w3-2019-pepper-stem">
+          <div class="w3-left w3-padding">
+            <h3>Cebollas</h3>
+          </div>
+          <div class="w3-right w3-padding">
+            <button
+              class="w3-button w3-circle w3-white w3-xlarge w3-right w3-text-red"
+              onclick="borrar_tarjeta('cebollas')"
+            >
+              &minus;
+            </button>
+          </div>
+        </header>
+
+        <div class="w3-container"></div>
+
+        <footer class="w3-container w3-light-grey"></footer>
+      </div>
+    </div>
+
+    <div class="w3-container w3-2019-living-coral w3-center">
+      <h5>Super Shopping List app | 2020</h5>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.6.2/dragula.min.js"></script>
+    <script src="app.js"></script>
+
+    <script>
+      // Habilitar la función de arrastre (drag & drop)
+      dragula([document.querySelector("#contenedor-tarjetas")]);
+    </script>
+  </body>
+</html>
