@@ -30,7 +30,7 @@
       </button>
     </div>
 
-    <!-- Ventana modal-->
+    <!-- Modal window (add new item) -->
     <div id="modal_add" class="w3-modal">
       <div class="w3-modal-content w3-card-4 w3-animate-zoom">
         <header class="w3-container w3-2019-sweet-corn">
@@ -43,7 +43,7 @@
         </header>
         <div class="w3-container">
           <input
-            id="input_nombre"
+            id="input_name"
             class="w3-input w3-margin-top w3-margin-bottom w3-border"
             type="text"
             placeholder="Item"
@@ -64,7 +64,7 @@
         <footer class="w3-container w3-2019-sweet-corn w3-padding w3-center">
           <button
             class="w3-button w3-circle w3-2019-living-coral w3-xlarge"
-            onclick="nueva_tarjeta('contenedor-tarjetas', document.getElementById('input_nombre').value, 
+            onclick="add_new_card('card-container', document.getElementById('input_name').value, 
               document.getElementById('input_text1').value, document.getElementById('input_text2').value, 'w3-2019-living-coral');
               document.getElementById('modal_add').style.display='none';"
           >
@@ -72,7 +72,7 @@
           </button>
           <button
             class="w3-button w3-circle w3-2019-pepper-stem w3-xlarge"
-            onclick="nueva_tarjeta('contenedor-tarjetas', document.getElementById('input_nombre').value, 
+            onclick="add_new_card('card-container', document.getElementById('input_name').value, 
           document.getElementById('input_text1').value, document.getElementById('input_text2').value, 'w3-2019-pepper-stem');
           document.getElementById('modal_add').style.display='none';"
           >
@@ -80,7 +80,7 @@
           </button>
           <button
             class="w3-button w3-circle w3-2019-toffee w3-xlarge"
-            onclick="nueva_tarjeta('contenedor-tarjetas', document.getElementById('input_nombre').value, 
+            onclick="add_new_card('card-container', document.getElementById('input_name').value, 
           document.getElementById('input_text1').value, document.getElementById('input_text2').value, 'w3-2019-toffee');
           document.getElementById('modal_add').style.display='none';"
           >
@@ -88,7 +88,7 @@
           </button>
           <button
             class="w3-button w3-circle w3-2019-princess-blue w3-xlarge"
-            onclick="nueva_tarjeta('contenedor-tarjetas', document.getElementById('input_nombre').value, 
+            onclick="add_new_card('card-container', document.getElementById('input_name').value, 
           document.getElementById('input_text1').value, document.getElementById('input_text2').value, 'w3-2019-princess-blue');
           document.getElementById('modal_add').style.display='none';"
           >
@@ -98,11 +98,8 @@
       </div>
     </div>
 
-    <!-- Tarjetas -->
-    <div
-      id="contenedor-tarjetas"
-      class="w3-container w3-margin w3-animate-left"
-    >
+    <!-- Cards -->
+    <div id="card-container" class="w3-container w3-margin w3-animate-left">
       <div id="huevos" class="w3-card-4 w3-margin-bottom">
         <header class="w3-bar w3-2019-living-coral w3-padding">
           <div class="w3-left">
@@ -111,7 +108,7 @@
           <div class="w3-right">
             <button
               class="w3-button w3-circle w3-white w3-xlarge w3-right w3-text-red"
-              onclick="borrar_tarjeta('huevos')"
+              onclick="remove_card('huevos')"
             >
               &minus;
             </button>
@@ -135,7 +132,7 @@
           <div class="w3-right w3-padding">
             <button
               class="w3-button w3-circle w3-white w3-xlarge w3-right w3-text-red"
-              onclick="borrar_tarjeta('cebollas')"
+              onclick="remove_card('cebollas')"
             >
               &minus;
             </button>
@@ -156,8 +153,8 @@
     <script src="app.js"></script>
 
     <script>
-      // Habilitar la función de arrastre (drag & drop)
-      dragula([document.querySelector("#contenedor-tarjetas")]);
+      // Enable drag & drop
+      dragula([document.querySelector("#card-container")]);
     </script>
   </body>
 </html>
