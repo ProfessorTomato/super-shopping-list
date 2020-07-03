@@ -1,17 +1,32 @@
-html,
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+body {
+  background-image: url("background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-width: 300px;
 }
 
-#contenedor-tarjetas {
+@media only screen and (max-width: 1080px) {
+  body {
+    /* The file size of this background image is 93% smaller
+       to improve page load speed on mobile internet connections */
+    background-image: url("background_mobile.jpg");
+  }
 }
 
 .w3-card-4 {
   margin: 0 auto;
   max-width: 500px;
+}
+
+#card-container {
+  padding-bottom: 40px;
+}
+
+#fixed-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin-top: 16px;
 }
